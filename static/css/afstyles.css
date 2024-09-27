@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.container h1 {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.announcement-list {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcement {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.announcement:last-child {
+    border-bottom: none;
+}
+
+.announcement h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.announcement p {
+    font-size: 16px;
+    color: #555;
+}
+
+.announcement .date {
+    font-size: 14px;
+    color: #999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.container h1 {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.announcement-list {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcement {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.announcement:last-child {
+    border-bottom: none;
+}
+
+.announcement h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.announcement p {
+    font-size: 16px;
+    color: #555;
+}
+
+.announcement .date {
+    font-size: 14px;
+    color: #999;
+}
+
+/*FORMS*/
+
+header p {
+    font-size: 18px;
+    color: #7c7c7c;
+}
+
+.form-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-list li {
+    margin: 15px 0;
+}
+
+.form-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.form-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.form-list i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #555;
+}
+
+.form-list i.fa-file-pdf {
+    color: #d9534f;
+}
+
+.form-list i.fa-file-word {
+    color: #007bff;
+}
+
+.form-list i.fa-file-excel {
+    color: #28a745;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matnog Sorsogon</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css'%}">
+    <script src="{% static 'js/homepage.js' %}"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'announcement_list' %}">Announcement</a></li>
+                <li><a href="forms.html">Forms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="homecontainer">
+        <!-- First Page -->
+        <section class="first page">
+            <div class="overlay">
+                <h1>MUNICIPALITY OF MATNOG</h1>
+                <p>The 3rd class municipality in the province of Sorsogon, Philippines.</p>
+                <button class="login-button"><a href="login.html">Log In</a></button>
+            </div>
+        </section>
+    </div>
+
+    <section class="second page">
+        <div class="container">
+            <div class="card">
+                <div class="card-header mission">
+                    <h2>MISSION</h2>
+                </div>
+                <div class="card-body">
+                    <div class="icon"><img src="/static/images/mission1.png" alt="Mission Icon" /></div>
+                    <p>To promote the well-being of Matnoganons through effective and efficient delivery of basic
+                        services, enhancement of socio-economic activities, preservation, and enrichment of ecologically
+                        balanced environment, strengthen people's participation and effective local governance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header oma">
+                    <h2>MANDATE</h2>
+                </div>
+                <div class="card-body">
+                    <div class="icon"><img src="/static/images/omainfo1.png" alt="OMA Icon" /></div>
+                    <p>The Office of the Municipal Agriculture is an agency of the Philippine government responsible for
+                        the promotion of the Agriculture & Fisheries development and growth. In partnership with the
+                        Department of Agriculture, provide benefits of development to the poor, especially in the rural
+                        areas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header vision">
+                    <h2>VISION</h2>
+                </div>
+                <div class="card-body">
+                    <div class="icon"><img src="/static/images/vision1.png" alt="Vision Icon" /></div>
+                    <p>The world-class gateway to Visayas and Mindanao with God loving and empowered people, globally
+                        competitive and with resilient and sustainable built-in and natural environment, nurtured by
+                        responsive local governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="third page">
+        <div class="content-box">
+            <h2>Active Federations/Organizations</h2>
+            <div class="org-list">
+                <ul>
+                    <li onclick="toggleTooltip(this)">
+                        Bon-ot Irrigators Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Melody Dela Vega</p>
+                            <p><strong>Members:</strong> 70</p>
+                            <p><strong>Commodity:</strong> HVCC/Fisheries</p>
+                            <p><strong>Agency Involved:</strong> OMA</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Sinebaran Farmers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Nina Dioleta</p>
+                            <p><strong>Members:</strong> 26</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> OMA/DA</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Bolo Rural Workers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Alex Hadap</p>
+                            <p><strong>Members:</strong> 25</p>
+                            <p><strong>Commodity:</strong> Corn and Cassava</p>
+                            <p><strong>Agency Involved:</strong> DA(SAA)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Bon-Ot Small Farmers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Concjito Majello, III</p>
+                            <p><strong>Members:</strong> 48</p>
+                            <p><strong>Commodity:</strong> Rica</p>
+                            <p><strong>Agency Involved:</strong> OMA/DA</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Samahang Magsasaka ng Poropandan
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Harold Galeria</p>
+                            <p><strong>Members:</strong> 25</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Manurabi Vegetable Grower Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Marilyn G. Bordaje</p>
+                            <p><strong>Members:</strong> 79</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> SLP/SAAD/OMA</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Bariis Agrarian Reform Beneficiaries Asso.
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Zaldy G. Gallanosa</p>
+                            <p><strong>Members:</strong> 30</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> OMA/DAR</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Barangay Calintaan Farmers and Fisherfolks Asso.
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Vicente Gabelo</p>
+                            <p><strong>Members:</strong> 39</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> OMA/TESDA</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li onclick="toggleTooltip(this)">
+                        <a href="#">Nab Farmers Association</a>
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Conchita Majello II</p>
+                            <p><strong>Members:</strong> 35</p>
+                            <p><strong>Commodity:</strong> Corn</p>
+                            <p><strong>Agency Involved:</strong> OMA/DA</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Pawa Farmers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Imelda Castidades</p>
+                            <p><strong>Members:</strong> 36</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Cabagahan Farmers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Elsie Gida</p>
+                            <p><strong>Members:</strong> 37</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Tugas Farmers Association (TuFa)
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Erman Guardian</p>
+                            <p><strong>Members:</strong> 45</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Barangay Sinebran Farmers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Nina Dioleta</p>
+                            <p><strong>Members:</strong> 30</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Balocawe Vegetable Growers Association
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Mary Fe Kilat</p>
+                            <p><strong>Members:</strong> 30</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> OMA/DA/DAR</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Samahang Magsasaka sa Kaunlaran ng Pange
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Domingo Gavanzo</p>
+                            <p><strong>Members:</strong> 55</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> DA(SAAD)</p>
+                        </div>
+                    </li>
+                    <li onclick="toggleTooltip(this)">
+                        Balocawe Nuestra Senora De Salvacion Cooperative
+                        <div class="tooltip">
+                            <p><strong>President:</strong> Kristine Joy Gaton</p>
+                            <p><strong>Members:</strong> 40</p>
+                            <p><strong>Commodity:</strong> HVCC</p>
+                            <p><strong>Agency Involved:</strong> OMA/TESDA</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <img src="/static/images/logo.png">
+        </div>
+        <div class="footer-content">
+            <p>Department of Agriculture, Matnog Sorsogon</p>
+            <p>Connect with us on <a href="https://www.facebook.com/profile.php?id=100092654285752" target="_blank"><img
+                        src="/static/images/facebook.png"></a></p>
+        </div>
+    </footer>
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>

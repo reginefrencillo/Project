@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{%load static%}
 <html lang="en">
 
 <head>
@@ -7,61 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title%}
-
         {% endblock%}
     </title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/employee_layout.css'%}">
+    <link rel="stylesheet" href="{% static 'css/employee_layout.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <nav class="sidebar-nav">
-                <ul>
-                    <li>
-                        <h2><i class="fas fa-user-tie"></i> Employee</h2>
-                    </li>
-                    <li><a href="farmers_commodity.html"><i class="fas fa-seedling"></i> Farmers Commodity</a></li>
-                    <li><a href="insuranceapp.html"><i class="fas fa-file-signature"></i> Insurance Application</a></li>
-                    <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
-                </ul>
-            </nav>
-            <div class="logout">
-                <a href="/"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-            </div>
-        </div>
-
-        <div class="main-content">
-            <div class="topbar">
-                <h5>Welcome Employee!</h5>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search..." />
-                </div>
-                <div class="icons">
-                    <a href="#notifications"><i class="fas fa-bell"></i></a>
-                    <a href="#profile"><i class="fas fa-user-circle"></i></a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container-fluid">
+            <img src="/static/images/logo.png" alt="Logo" class="logo">
+            <span class="admin-text font-weight-bold">Matnog Office of Municipal Agriculturists</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="navbar-icons">
+                    <a class="fas fa-bell fa-lg mr-4 text-secondary"></a>
+                    <a class="fas fa-user-circle fa-lg text-secondary"></a>
                 </div>
             </div>
+        </div>
+    </nav>
 
-            <section class="content">
-                {% block content%}
-        
-                <!-- Empty content area -->
-               
-                {% endblock %}
-            </section>
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div id="sidebar"> <!-- Updated lighter color for employee sidebar -->
+            <span class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-angle-double-left"></i> <!-- Toggle icon -->
+            </span>
+            <div class="employee-info">
+                <i class="fas fa-user"></i> <!-- Employee icon -->
+                <span class="employee-text">EMPLOYEE</span> <!-- Employee text -->
+            </div>
+
+
+            <ul class="nav flex-column mt-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark font-weight-bold">
+                        <i class="fas fa-leaf"></i> <span class="link-text">Farmers Commodity</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark font-weight-bold">
+                        <i class="fas fa-file-signature"></i> <span class="link-text">Insurance Application</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark font-weight-bold">
+                        <i class="fas fa-file-alt"></i> <span class="link-text">Reports</span>
+                    </a>
+                </li>
+            </ul>
+             <a href="#" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="link-text">Logout</span>
+            </a>
         </div>
 
-        <footer class="footer">
-            &copy; 2024 Employee System. All rights reserved.
-        </footer>
+        <!-- Content -->
+        <div class="content">
+            {% block content%}
+            <h2>Welcome to the Employee Dashboard</h2>
+            <p>Your tasks and information are accessible here.</p>
+            {% endblock %}
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        &copy; Office of Municipal Agriculturists in Matnog. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/employee_layout.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,59 @@
+/* Adjust the container to align items at the top */
+.container {
+    display: flex;
+    align-items: flex-start;
+    /* Align to the top */
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 20px;
+    padding-top: 10px;
+    /* Add padding to control the distance from the top */
+}
+
+/* The rest of the styles remain the same */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.login-box .form-control {
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.login-box .fa-eye {
+    font-size: 18px;
+}
+
+.login-box .btn-block {
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-success:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}

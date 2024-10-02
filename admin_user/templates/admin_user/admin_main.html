@@ -5,5 +5,7 @@
 {% endblock %}
 
 {%block content %}
-<h1>hI John</h1>
+<a href="{% url 'registerFarmer' %}" class="btn btn-success">Register New Farmer</a>
+<a href="{% url 'admin_user:farmer_list' %}" class="btn btn-primary mt-3">View Farmers List</a>
+
 {% endblock %}

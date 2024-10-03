@@ -1,0 +1,62 @@
+body {
+    background-color: #f8f9fa;
+    /* Light gray background */
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 600px;
+    /* Set max width for the container */
+}
+
+.announcement-box {
+    background-color: #ffffff;
+    /* White background for the form box */
+    border-radius: 8px;
+    padding: 30px;
+    /* Padding inside the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.btn-success {
+    width: 100%;
+    /* Make button full-width */
+    padding: 15px;
+    /* Increase button padding */
+    background-color: #28a745;
+    /* Bootstrap green */
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+.text-center {
+    font-weight: bolder;
+    /* Bold the text */
+    font-size: 24px;
+    /* Slightly larger font size */
+    margin-bottom: 20px;
+    /* Add some space below the heading */
+}
+
+.alert-message {
+    margin-bottom: 20px;
+    /* Add margin below alert messages */
+}
+
+.alert {
+    background-color: #f8d7da;
+    /* Light red background for alerts */
+    color: #721c24;
+    /* Dark red text */
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "announcement",
     "user_management",
     "widget_tweaks",
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
 ]
 
 ROOT_URLCONF = "Capstone.urls"

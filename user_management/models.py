@@ -72,3 +72,18 @@ class Employees(User):
 
     def welcome(self):
         return "Welcome, EMPLOYEE!"
+
+@receiver(post_save, sender=Employees)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created and instance.role == "EMPLOYEE":
+        EmployeesProfile.objects.create(user=instance)
+
+class EmployeesProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    employeeID = models.CharField(max_length=10, unique=True, null=True, blank=True)  # Optional employee ID
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    commodities = models.CharField(max_length=100)
+

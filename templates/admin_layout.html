@@ -37,34 +37,30 @@
         </div>
     </nav>
 
-
     <!-- Sidebar -->
     <div class="d-flex">
         <div id="sidebar" class="bg-success text-light p-4">
             <span class="toggle-btn" onclick="toggleSidebar()">
-                <i class="fas fa-angle-double-left"></i> <!-- Updated toggle icon -->
+                <i class="fas fa-angle-double-left"></i> <!-- Toggle icon -->
             </span>
-            <!-- Admin Icon and Text above the Toggle Button -->
+            <!-- Admin Icon and Text -->
             <div class="admin-info mb-4">
-
                 <i class="fas fa-user-shield fa-lg"></i> <!-- Admin Icon -->
-                <span class="ml-2 font-weight-bold">Admin</span> <!-- Admin Text -->
             </div>
-
 
             <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-light font-weight-bold">
+                    <a href="{% url 'admin_user:dashboard'%}" class="nav-link text-light font-weight-bold">
                         <i class="fas fa-tachometer-alt"></i> <span class="link-text">DASHBOARD</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-light font-weight-bold">
+                    <a href="{% url 'admin_user:admin_farmer'%}" class="nav-link text-light font-weight-bold">
                         <i class="fas fa-tractor"></i> <span class="link-text">FARMERS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-light font-weight-bold">
+                    <a href="{% url 'admin_user:admin_employee'%}" class="nav-link text-light font-weight-bold">
                         <i class="fas fa-users"></i> <span class="link-text">EMPLOYEES</span>
                     </a>
                 </li>
@@ -78,9 +74,15 @@
                         <i class="fas fa-file-signature"></i> <span class="link-text">INSURANCE</span>
                     </a>
                 </li>
+                <li class="nav-item mt-auto">
+                    <a href="#" class="nav-link text-light font-weight-bold logout-btn p-2 rounded" 
+                       style="background-color: #032c16; margin-left: -15px;">
+                        <i class="fas fa-sign-out-alt"></i> <span class="link-text">Logout</span>
+                    </a>
+                </li>
             </ul>
-
         </div>
+
         <!-- Content -->
         <div class="content">
             {%block content%}
@@ -90,17 +92,21 @@
             {%endblock%}
         </div>
     </div>
+
     <!-- Footer -->
     <footer>
         &copy; Office of Municipal Agriculturists in Matnog. All Rights Reserved.
     </footer>
-
 
     <!-- Scripts -->
     <script src="{% static 'js/admin_layout.js'%}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  
+
+    
 </body>
 
 </html>

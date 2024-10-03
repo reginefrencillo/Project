@@ -47,6 +47,7 @@ html {
 
 /* Sidebar */
 #sidebar {
+
     width: 250px;
     background-color: #343a40;
     height: 100vh;
@@ -69,7 +70,6 @@ html {
 
 /* Toggle Button */
 .toggle-btn {
-    background-color: #073d1c;
     color: #ffffff;
     border-radius: 50%;
     width: 30px;
@@ -81,7 +81,6 @@ html {
     position: relative;
     margin: 39px -15px;
     margin-bottom: 5px;
-    box-shadow: 1px rgba(13, 65, 22, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -114,7 +113,7 @@ html {
 }
 
 #sidebar .nav-link {
-    font-size: 1rem;
+    font-size: .9rem;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -146,8 +145,8 @@ html {
 
 /* Hover effect only for the toggle button */
 .toggle-btn:hover {
-    background-color: #304136;
-    transform: scale(1.1);
+    background-color: none;
+    transform: none;
 }
 
 /* Collapsed Sidebar */
@@ -216,6 +215,28 @@ p {
     .content {
         margin-left: 100px;
     }
+}
+
+.logout-btn {
+    background-color: #032c16 !important;
+    /* Red background */
+    color: white !important;
+    /* White text */
+    text-align: left;
+    /* Align text to the left */
+    padding-left: 10px;
+    /* Keep it closer to the left */
+}
+
+/* Move the logout button slightly to the left */
+.logout-btn {
+    margin-left: -15px;
+}
+
+/* Other link styling for consistency */
+.nav-link {
+    margin-bottom: 10px;
+    /* Add space between links */
 }
 
 footer {

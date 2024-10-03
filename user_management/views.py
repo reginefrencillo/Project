@@ -2,12 +2,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import FarmerRegistrationForm
+from .forms import EmployeesRegistrationForm
 # users/views.py
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-
 
 
 def registerFarmer(request):
@@ -23,9 +23,23 @@ def registerFarmer(request):
     else:
         form = FarmerRegistrationForm()
 
-    return render(request, 'user_management/register.html', {'form': form})
+    return render(request, 'user_management/register_farmer.html', {'form': form})
 
 
+
+def registerEmployee(request):
+    if request.method == 'POST':
+        form = EmployeesRegistrationForm(request.POST)
+        if form.is_valid():
+            new_employee = form.save()
+            messages.success(request, 'Employee added successfully!')
+            return redirect('user_management:registerEmployee')  # Adjust to your actual employee list view
+        else:
+            logger.error(form.errors)  # Log errors for debugging
+            messages.error(request, 'Failed to add the employee. Please check the details and try again.')
+    else:
+        form = EmployeesRegistrationForm() 
+    return render(request, 'user_management/register_employee.html', {'form': form})
 
 
 def login(request):
@@ -51,5 +65,3 @@ def login(request):
             return redirect('login')
 
     return render(request, 'user_management/login.html')  # Adjust template path
-
-

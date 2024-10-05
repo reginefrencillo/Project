@@ -1,24 +1,26 @@
-# users/views.py
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import FarmerRegistrationForm
-from .forms import EmployeesRegistrationForm
-# users/views.py
-from django.contrib.auth import authenticate, login as auth_login
-from django.contrib.auth.models import User
+from .forms import FarmerRegistrationForm, EmployeesRegistrationForm
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from .decorators import role_required
+import logging
 
+# Configure logger
+logger = logging.getLogger(__name__)
 
+@login_required
+@role_required(allowed_roles=['ADMIN'])  # Only admins can register farmers
 def registerFarmer(request):
     if request.method == 'POST':
         form = FarmerRegistrationForm(request.POST)
         if form.is_valid():
             new_farmer = form.save()
             messages.success(request, 'Farmer added successfully!')
-            return redirect('user_management:registerFarmer')  # Adjust redirect as needed
+            return redirect('user_management:registerFarmer')
         else:
-            print(form.errors)  # Log errors for debugging
+            logger.error(form.errors)
             messages.error(request, 'Failed to add the farmer. Please check the details and try again.')
     else:
         form = FarmerRegistrationForm()
@@ -26,22 +28,24 @@ def registerFarmer(request):
     return render(request, 'user_management/register_farmer.html', {'form': form})
 
 
-
+@login_required
+@role_required(allowed_roles=['ADMIN'])  # Only admins can register employees
 def registerEmployee(request):
     if request.method == 'POST':
         form = EmployeesRegistrationForm(request.POST)
         if form.is_valid():
             new_employee = form.save()
             messages.success(request, 'Employee added successfully!')
-            return redirect('user_management:registerEmployee')  # Adjust to your actual employee list view
+            return redirect('user_management:registerEmployee')
         else:
-            logger.error(form.errors)  # Log errors for debugging
+            logger.error(form.errors)
             messages.error(request, 'Failed to add the employee. Please check the details and try again.')
     else:
-        form = EmployeesRegistrationForm() 
+        form = EmployeesRegistrationForm()
     return render(request, 'user_management/register_employee.html', {'form': form})
 
 
+@csrf_exempt  # Optional: Only if you really need it; consider removing it if not needed
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -49,19 +53,25 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         
         if user is not None:
-            auth_login(request, user)  # Log in the user
-            # Debug: Print user role to console
+            auth_login(request, user)
             print(f"User {user.username} has role {user.role}")
             
-            # Redirect based on user role
             if user.role == 'ADMIN':
-                return redirect('admin_user:dashboard')  # Redirect to admin dashboard
+                return redirect('admin_user:dashboard')
             elif user.role == 'EMPLOYEE':
-                return redirect('employee:employee_page')  # Redirect to employee dashboard
+                return redirect('employee:employee_page')
             elif user.role == 'FARMER':
-                return redirect('farmers:farmer_page')  # Redirect to farmer dashboard
+                return redirect('farmers:farmer_page')
         else:
-            messages.error(request, 'Invalid username or password')
-            return redirect('login')
+            messages.error(request, 'Invalid username or password.')
+            return redirect('user_management:login')
 
-    return render(request, 'user_management/login.html')  # Adjust template path
+    return render(request, 'user_management/login.html')
+
+
+def logoutUser(request):
+    """
+    Logs out the user and redirects to the login page.
+    """
+    logout(request)
+    return redirect('user_management:login')

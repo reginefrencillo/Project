@@ -1,36 +1,88 @@
 {% extends 'employee_layout.html' %}
+{% load static %} 
 
 {% block title %}
     Employee
 {% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employee/css/employee_main.css' %}">
+{% endblock %}
+
 
 {%block content %}
 <section class="content">
-    <h2>Farmers commodity</h2>
+    <h2>Farmers Commodity</h2>
     <div class="commodity-grid">
-        
-        <a href="#" class="commodity-item">
-            <img src="image/rice.png" alt="Rice Crops">
+        <div class="commodity-item">
+            <img src="{% static 'employee/images/rice.png' %}" alt="Rice Crops">
             <p>Rice Crops</p>
-        </a>
-        <a href="#" class="commodity-item">
-            <img src="image/highvalue.png" alt="High Value Commercial Crops">
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employee/images/highvalue.png' %}" alt="High Value Commercial Crops">
             <p>High Value Commercial Crops</p>
-        </a>
-        <a href="#" class="commodity-item">
-            <img src="image/livestock.png" alt="Livestock and Poultry">
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employee/images/livestock.png' %}" alt="Livestock and Poultry">
             <p>Livestock and Poultry</p>
-        </a>
-        <a href="#" class="commodity-item">
-            <img src="image/fish.png" alt="Fisheries">
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employee/images/fish.png' %}" alt="Fisheries">
             <p>Fisheries</p>
-        </a>
-        <a href="#" class="commodity-item">
-            <img src="image/corn.png" alt="Corn and Cassava">
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employee/images/corn.png' %}" alt="Corn and Cassava">
             <p>Corn and Cassava</p>
-        </a>
+        </div>
     </div>
 </section>
 
+
+<section class="content">
+    <h2>List of Barangays in Matnog</h2>
+    <div class="barangay-container">
+        <ul>
+            <li><a href="#">Balocawe</a></li>
+            <li><a href="#">Banogao</a></li>
+            <li><a href="#">Banuang-Daan</a></li>
+            <li><a href="#">Bariis</a></li>
+            <li><a href="#">Bolo</a></li>
+            <li><a href="#">Bon-Ot Dako</a></li>
+            <li><a href="#">Bon-Ot Saday</a></li>
+            <li><a href="#">Cabagahan</a></li>
+            <li><a href="#">Calayuan</a></li>
+            <li><a href="#">Caloocan (Poblacion)</a></li>
+            <li><a href="#">Calpi</a></li>
+            <li><a href="#">Camachiles (Poblacion)</a></li>
+            <li><a href="#">Camcaman (Poblacion)</a></li>
+            <li><a href="#">Coron-Coron</a></li>
+            <li><a href="#">Culasi</a></li>
+            <li><a href="#">Gadgaran</a></li>
+            <li><a href="#">Genablan-Occidental</a></li>
+            <li><a href="#">Genablan-Oriental</a></li>
+            <li><a href="#">Hid-Hid</a></li>
+            <li><a href="#">Laboy</a></li>
+            <li><a href="#">Lajong</a></li>
+            <li><a href="#">Mambajog</a></li>
+            <li><a href="#">Manjumlao</a></li>
+            <li><a href="#">Manurabi</a></li>
+            <li><a href="#">Nasuracan</a></li>
+            <li><a href="#">Paghuliran</a></li>
+            <li><a href="#">Pange</a></li>
+            <li><a href="#">Pawa</a></li>
+            <li><a href="#">Poropandan</a></li>
+            <li><a href="#">Santa Isabel</a></li>
+            <li><a href="#">Sinalmacan</a></li>
+            <li><a href="#">Sinang-atan</a></li>
+            <li><a href="#">Sinebaran</a></li>
+            <li><a href="#">Sisigon</a></li>
+            <li><a href="#">Suwa</a></li>
+            <li><a href="#">Sulangan</a></li>
+            <li><a href="#">Tablac (Poblacion)</a></li>
+            <li><a href="#">Tabunan (Poblacion)</a></li>
+            <li><a href="{% url 'employee:farmers_list' %}">Tugas</a></li>
+            <!-- Add more barangays here if needed -->
+        </ul>
+    </div>
+</section>
 {% endblock%}

@@ -26,7 +26,7 @@ urlpatterns = [
     path("admin_user/", include("admin_user.urls", namespace='admin_user')),
     path("employee/", include("employee.urls")),
     path("farmers/", include("farmers.urls")),
-    path("user_management/", include("user_management.urls")),
+    path('user_management/', include('user_management.urls', namespace='user_management')),
 
 
 ]

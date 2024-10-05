@@ -1,0 +1,118 @@
+{% extends 'employee_layout.html' %}
+{% load static %} 
+
+{% block title %}
+    Employee
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employee/css/employee_main.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <section class="content">
+        <!-- Barangay label placed at the top right -->
+        <h3 class="barangay-label">Barangay: Balocawe</h3>
+        <h3 class="barangay-label">Commodity: Rice Crops</h3>
+        <ul>
+            {% for farmer in farmers %}
+                <li>{{ farmer.first_name }} {{ farmer.last_name }} 
+                    <a href="{% url 'employee:farmer_update' farmer.pk %}">Edit</a>
+                    <a href="{% url 'employee:farmer_delete' farmer.pk %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'employee:farmer_create' %}">Add New Farmer</a>
+        
+
+        <div class="table-wrapper">
+            <table class="applicants-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>RSBA No.</th>
+                        <th>Date Started</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr href="profile.html?id=1">
+                        <td>Juan Dela Cruz</td>
+                        <td>1234567890</td>
+                        <td>01/13/2009</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=2">
+                        <td>Maria Santos</td>
+                        <td>9876543210</td>
+                        <td>03/21/2015</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=3">
+                        <td>Pedro Reyes</td>
+                        <td>1357924680</td>
+                        <td>09/10/2012</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr href="profile.html?id=4">
+                        <td>Ana Gomez</td>
+                        <td>2468135790</td>
+                        <td>11/05/2018</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr href="profile.html?id=1">
+                        <td>Juan Dela Cruz</td>
+                        <td>1234567890</td>
+                        <td>01/13/2009</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=2">
+                        <td>Maria Santos</td>
+                        <td>9876543210</td>
+                        <td>03/21/2015</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=3">
+                        <td>Pedro Reyes</td>
+                        <td>1357924680</td>
+                        <td>09/10/2012</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr href="profile.html?id=4">
+                        <td>Ana Gomez</td>
+                        <td>2468135790</td>
+                        <td>11/05/2018</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr href="profile.html?id=1">
+                        <td>Juan Dela Cruz</td>
+                        <td>1234567890</td>
+                        <td>01/13/2009</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=2">
+                        <td>Maria Santos</td>
+                        <td>9876543210</td>
+                        <td>03/21/2015</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr href="profile.html?id=3">
+                        <td>Pedro Reyes</td>
+                        <td>1357924680</td>
+                        <td>09/10/2012</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr href="profile.html?id=4">
+                        <td>Ana Gomez</td>
+                        <td>2468135790</td>
+                        <td>11/05/2018</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </section>
+
+{% endblock %}

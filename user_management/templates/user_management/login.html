@@ -29,7 +29,7 @@
                     {% endfor %}
                 {% endif %}
             </div>
-            <form method="post" action="{% url 'login' %}">
+            <form method="post" action="{% url 'user_management:login' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <input type="text" name="username" class="form-control" placeholder="Username" required>

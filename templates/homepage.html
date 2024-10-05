@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matnog Office of Municipal Agriculturists</title>
-    <link rel="stylesheet" href="{% static 'css/homepage.css'%}">
+    <link rel="stylesheet" href="{%static 'css/homepage.css'%}">
     <script src="{% static 'js/homepage.js' %}"></script>
+
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <div class="overlay">
                 <h1>MUNICIPALITY OF MATNOG</h1>
                 <p>The 3rd class municipality in the province of Sorsogon, Philippines.</p>
-                <button class="login-button"><a href="{% url 'login' %}">Log In</a></button>
+                <button class="login-button"><a href="{% url 'user_management:login' %}">Log In</a></button>
             </div>
         </section>
     </div>

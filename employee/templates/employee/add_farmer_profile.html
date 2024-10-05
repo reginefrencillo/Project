@@ -1,0 +1,186 @@
+{% extends 'employee_layout.html' %}
+{% load static %} 
+
+{% block title %}
+    Employee
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employee/css/employee_main.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="profile">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="personal-info">
+            <h2>Personal Information</h2>
+            <div class="info-row">
+                <label>First Name:</label>
+                {{ form.first_name }}
+            </div>
+            <div class="info-row">
+                <label>Middle Name:</label>
+                {{ form.middle_name }}
+            </div>
+            <div class="info-row">
+                <label>Last Name:</label>
+                {{ form.last_name }}
+            </div>
+            <div class="info-row">
+                <label>Extension Name:</label>
+                {{ form.ext_name }}
+            </div>
+            <div class="info-row">
+                <label>House No:</label>
+                {{ form.house_no }}
+            </div>
+            <div class="info-row">
+                <label>Street:</label>
+                {{ form.street }}
+            </div>
+            <div class="info-row">
+                <label>Barangay:</label>
+                {{ form.baranggay }}
+            </div>
+            <div class="info-row">
+                <label>Municipality:</label>
+                {{ form.municipality }}
+            </div>
+            <div class="info-row">
+                <label>Province:</label>
+                {{ form.province }}
+            </div>
+            <div class="info-row">
+                <label>Region:</label>
+                {{ form.region }}
+            </div>
+            <div class="info-row">
+                <label>Gender:</label>
+                {{ form.gender }}
+            </div>
+            <div class="info-row">
+                <label>Person with Disability:</label>
+                {{ form.pwd }}
+            </div>
+            <div class="info-row">
+                <label>Contact No:</label>
+                {{ form.contact_no }}
+            </div>
+            <div class="info-row">
+                <label>Religion:</label>
+                {{ form.religion }}
+            </div>
+            <div class="info-row">
+                <label>Education Attainment:</label>
+                {{ form.educ_attainment }}
+            </div>
+            <div class="info-row">
+                <label>Civil Status:</label>
+                {{ form.civil_status }}
+            </div>
+        </div>
+
+        <div class="personal-detail">
+            <h2>Personal Details</h2>
+            <div class="info-row">
+                <label>Age:</label>
+                {{ form.age }}
+            </div>
+            <div class="info-row">
+                <label>Day of Birth:</label>
+                {{ form.day_of_birth }}
+            </div>
+            <div class="info-row">
+                <label>Month of Birth:</label>
+                {{ form.month_of_birth }}
+            </div>
+            <div class="info-row">
+                <label>Year of Birth:</label>
+                {{ form.year_of_birth }}
+            </div>
+            <div class="info-row">
+                <label>Birthplace:</label>
+                {{ form.birthplace }}
+            </div>
+            <div class="info-row">
+                <label>Name of Spouse:</label>
+                {{ form.name_of_spouse }}
+            </div>
+            <div class="info-row">
+                <label>Mother's Maiden Name:</label>
+                {{ form.mothers_maiden }}
+            </div>
+            <div class="info-row">
+                <label>Name of Household Head:</label>
+                {{ form.name_of_household_head }}
+            </div>
+            <div class="info-row">
+                <label>Relationship:</label>
+                {{ form.relationship }}
+            </div>
+            <div class="info-row">
+                <label>No. of Household Members:</label>
+                {{ form.household_members }}
+            </div>
+            <div class="info-row">
+                <label>No. of Males:</label>
+                {{ form.household_male }}
+            </div>
+            <div class="info-row">
+                <label>No. of Females:</label>
+                {{ form.household_female }}
+            </div>
+        </div>
+
+        <div class="background-detail">
+            <h2>Background</h2>
+            <div class="info-row">
+                <label>Government ID:</label>
+                {{ form.govern_id }}
+            </div>
+            <div class="info-row">
+                <label>ID Type:</label>
+                {{ form.id_type }}
+            </div>
+            <div class="info-row">
+                <label>ID Number:</label>
+                {{ form.id_no }}
+            </div>
+            <div class="info-row">
+                <label>Member of Association/Cooperative:</label>
+                {{ form.is_member }}
+            </div>
+            <div class="info-row">
+                <label>Specialization:</label>
+                {{ form.specify }}
+            </div>
+            <div class="info-row">
+                <label>Person to Notify in Emergency:</label>
+                {{ form.if_emergency }}
+            </div>
+            <div class="info-row">
+                <label>Emergency Contact:</label>
+                {{ form.emergency_contact }}
+            </div>
+            <div class="info-row">
+                <label>Main Livelihood:</label>
+                {{ form.main_livelihood }}
+            </div>
+            <div class="info-row">
+                <label>Position:</label>
+                {{ form.position }}
+            </div>
+            <div class="info-row">
+                <label>Specify Position:</label>
+                {{ form.specify_position }}
+            </div>
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+</section>
+
+
+{% endblock %}

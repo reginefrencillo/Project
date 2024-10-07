@@ -1,12 +1,108 @@
 {% extends 'farmer_layout.html' %}
 
+{% load static %} 
+{% load crispy_forms_tags %}
+
 {% block title %}
-    Farmers
+    Farmer
 {% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'farmers/css/farmer_main.css' %}">
+{% endblock %}
 
 {%block content %}
-<!-- Empty content area -->
-<h2>REGINE</h2>
-<p>Welcome to the farmers' dashboard. Here you can manage your information.</p>
+
+    <div class="container">
+        <h2>Your Profile Information</h2>
+        <div class="profile-info">
+            <div class="profile-item">
+                <strong>Farmer ID:</strong> {{ profile.farmerID }}
+            </div>
+            <div class="profile-item">
+                <strong>Address:</strong> {{ profile.address }}
+            </div>
+            <div class="profile-item">
+                <strong>Phone Number:</strong> {{ profile.phone_number }}
+            </div>
+            <div class="profile-item">
+                <strong>Commodities:</strong> {{ profile.commodities }}
+            </div>
+        </div>
+
+        <h3>Update Your Information</h3>
+        <form method="POST">  <!-- No action needed; form submits to the same URL -->
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Renders the form fields -->
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+        </form>
+    </div>
+
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+
+
+
 {% endblock%}

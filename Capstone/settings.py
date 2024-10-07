@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4h&pk&wua1_xps5f5_79gl2jz*hah#3pg$ge(4ii91023)b2c_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['regineZeal.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,13 +40,18 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "farmers",
-    "employee",
+    "employees",
     "admin_user",
     "announcement",
     "user_management",
     "widget_tweaks",
     'django_celery_beat',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -87,7 +92,7 @@ WSGI_APPLICATION = "Capstone.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "Capstone",  # Replace with the name of your MySQL database
+        "NAME": "projectdb",  # Replace with the name of your MySQL database
         "USER": "Project",  # Replace with your MySQL user (usually 'root')
         "PASSWORD": "MISMatnog",  # Replace with your MySQL root password
         "HOST": "localhost",  # Since it's on your machine
@@ -126,17 +131,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'  # Correct for production
 
-# Directory where static files will be collected
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Correct for production
+STATIC_URL = '/static/'
 
-# Additional locations of static files
+# During development, Django will look for static files in this directory
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),  # Ensure your static files are inside a folder called 'static'
 ]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -1,0 +1,92 @@
+{% extends 'employee_layout.html' %}
+
+{% load static %} 
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Employee
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employees/css/employee_main.css' %}">
+
+{% endblock %}
+
+
+{%block content %}
+<section class="content">
+    <h2>Farmers Commodity</h2>
+    <div class="commodity-grid">
+        <div class="commodity-item">
+            <img src="{% static 'employees/images/rice.png' %}" alt="Rice Crops">
+            <p>Rice Crops</p>
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employees/images/highvalue.png' %}" alt="High Value Commercial Crops">
+            <p>High Value Commercial Crops</p>
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employees/images/livestock.png' %}" alt="Livestock and Poultry">
+            <p>Livestock and Poultry</p>
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employees/images/fish.png' %}" alt="Fisheries">
+            <p>Fisheries</p>
+        </div>
+        <div class="commodity-item">
+            <img src="{% static 'employees/images/corn.png' %}" alt="Corn and Cassava">
+            <p>Corn and Cassava</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="content">
+    <h2>List of Barangays in Matnog</h2>
+    <div class="barangay-container">
+        <ul>
+            <li><a href="fc.html">Balocawe</a></li>
+            <li><a href="fc.html">Banogao</a></li>
+            <li><a href="fc.html">Banuang-Daan</a></li>
+            <li><a href="fc.html">Bariis</a></li>
+            <li><a href="fc.html">Bolo</a></li>
+            <li><a href="fc.html">Bon-Ot Dako</a></li>
+            <li><a href="fc.html">Bon-Ot Saday</a></li>
+            <li><a href="fc.html">Cabagahan</a></li>
+            <li><a href="fc.html">Calayuan</a></li>
+            <li><a href="fc.html">Caloocan (Poblacion)</a></li>
+            <li><a href="fc.html">Calpi</a></li>
+            <li><a href="fc.html">Camachiles (Poblacion)</a></li>
+            <li><a href="fc.html">Camcaman (Poblacion)</a></li>
+            <li><a href="fc.html">Coron-Coron</a></li>
+            <li><a href="fc.html">Culasi</a></li>
+            <li><a href="fc.html">Gadgaran</a></li>
+            <li><a href="fc.html">Genablan-Occidental</a></li>
+            <li><a href="fc.html">Genablan-Oriental</a></li>
+            <li><a href="fc.html">Hid-Hid</a></li>
+            <li><a href="fc.html">Laboy</a></li>
+            <li><a href="fc.html">Lajong</a></li>
+            <li><a href="fc.html">Mambajog</a></li>
+            <li><a href="fc.html">Manjumlao</a></li>
+            <li><a href="fc.html">Manurabi</a></li>
+            <li><a href="fc.html">Nasuracan</a></li>
+            <li><a href="fc.html">Paghuliran</a></li>
+            <li><a href="fc.html">Pange</a></li>
+            <li><a href="fc.html">Pawa</a></li>
+            <li><a href="fc.html">Poropandan</a></li>
+            <li><a href="fc.html">Santa Isabel</a></li>
+            <li><a href="fc.html">Sinalmacan</a></li>
+            <li><a href="fc.html">Sinang-atan</a></li>
+            <li><a href="fc.html">Sinebaran</a></li>
+            <li><a href="fc.html">Sisigon</a></li>
+            <li><a href="fc.html">Suwa</a></li>
+            <li><a href="fc.html">Sulangan</a></li>
+            <li><a href="fc.html">Tablac (Poblacion)</a></li>
+            <li><a href="fc.html">Tabunan (Poblacion)</a></li>
+            <li><a href="{% url 'employees:farmers_commodity' %}">Tugas</a></li>
+            <!-- Add more barangays here if needed -->
+        </ul>
+    </div>
+</section>
+
+{% endblock%}

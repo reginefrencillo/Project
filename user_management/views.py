@@ -59,7 +59,7 @@ def login(request):
             if user.role == 'ADMIN':
                 return redirect('admin_user:dashboard')
             elif user.role == 'EMPLOYEE':
-                return redirect('employee:employee_page')
+                return redirect('employees:employee_page')
             elif user.role == 'FARMER':
                 return redirect('farmers:farmer_page')
         else:

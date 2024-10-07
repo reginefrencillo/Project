@@ -1,0 +1,98 @@
+/* PROFILE INFORMATION */
+
+.personal-info,
+.personal-detail,
+.background-detail {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    /* Added margin to separate sections */
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #365432;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.info-row label {
+    font-weight: bold;
+    color: #333;
+    flex-basis: 40%;
+    /* Adjust label width */
+}
+
+.info-row input,
+.info-row select {
+    flex-basis: 55%;
+    /* Adjust input/select width */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.info-row span {
+    color: #666;
+}
+
+button {
+    background-color: #365432;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4f6e4e;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    flex-shrink: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .info-row {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+    }
+
+    .info-row label {
+        flex-basis: auto;
+        /* Remove fixed width for labels */
+        margin-bottom: 5px;
+        /* Add space below labels */
+    }
+
+    .info-row input,
+    .info-row select {
+        flex-basis: 100%;
+        /* Full width for inputs */
+    }
+
+    button {
+        width: 100%;
+        /* Full width button */
+    }
+}

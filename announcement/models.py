@@ -12,4 +12,4 @@ class Announcement(models.Model):
         return self.title
 
     def is_expired(self):
-        return timezone.now() > self.date + timedelta(days=30)
+        return timezone.now() > self.date + timedelta(days=2)

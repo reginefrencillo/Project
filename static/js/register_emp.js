@@ -1,14 +1,19 @@
+
 // Toggle password visibility
-document.getElementById('togglePassword').addEventListener('click', function () {
-    const passwordField = document.querySelector('input[name="password"]');
+const togglePassword = document.getElementById('togglePassword');
+const passwordField = document.querySelector('input[name="password"]');
+
+togglePassword.addEventListener('click', function () {
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
     this.classList.toggle('fa-eye-slash');
 });
 
-document.getElementById('togglePassword2').addEventListener('click', function () {
-    const passwordField = document.querySelector('input[name="password2"]');
-    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordField.setAttribute('type', type);
+const togglePassword2 = document.getElementById('togglePassword2');
+const passwordField2 = document.querySelector('input[name="password2"]');
+
+togglePassword2.addEventListener('click', function () {
+    const type = passwordField2.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField2.setAttribute('type', type);
     this.classList.toggle('fa-eye-slash');
 });
